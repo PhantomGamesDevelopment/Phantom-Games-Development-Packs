@@ -1,0 +1,37 @@
+Here is an example for a waypoint used by the GUI:
+
+%waypoint = new  (WayPoint)(){
+   dataBlock        = WayPointMarker;
+   position         = %position;
+   name             = "Test";
+   scale            = "0.1 0.1 0.1";
+   team             = %team;
+};
+MissionCleanup.add(%waypoint);
+%waypoint.setTeam(%team);
+%waypoint.setShapeIcon("path/to/icon.png");
+
+Waypoints that are rendered must have a shapeIcon assigned to it.
+
+On the client, attach the GuiWaypointOverlay to your playGui and cover the entire screen with it.
+Then use the following code on the overlay:
+
+%overlay = ...; //Replace with overlay object.
+%overlay.setTeamColor(0, 1.0, 1.0, 1.0);
+%overlay.setTeamColor(1, 0.0, 1.0, 0.0); //1 - Green
+%overlay.setTeamColor(2, 1.0, 0.0, 0.0); //2 - Red
+
+A clever person, could use this to have teams show friendly icons as one color, and enemy icons as 
+another:
+
+function clientCmdSetColor(%team, %color) {
+   %overlay = ...; //Replace with overlay object.
+   %overlay.setTeamColor(%team, getWord(%color, 0), getWord(%color, 1), getWord(%color, 2));
+}
+
+And then on the server end, you can force the client color with:
+
+commandToClient(%client, 'SetColor', %team, %color);
+
+The client end can also obtain the color string of the current color by using:
+%color = %overlay.getTeamColor(%team);

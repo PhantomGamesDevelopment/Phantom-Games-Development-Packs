@@ -1,0 +1,25 @@
+Multiplayer Assembly Package
+Version 2.1
+
+Pack Design: Robert Fritzen
+
+Credits & Acknowledgements:
+Crypto++: 
+I would like to thank Wei Dai for the wonderful library and all the help
+you provided to me to get my cryptograpy methods working with Torque 3D
+
+I Would also like to thank Geoff Beier for assisting me with the problems
+with the AES encryption and helping me to get that functioning properly
+
+cURL:
+I would like to thank Daniel Stenberg for the constant development and support
+of the cURL library, to without which, my TCPObjects would still be haunting
+my authentication memories to this day.
+
+GarageGames: 
+To whom without, this pack would never have seen the light of day, thank you
+GarageGames, for the wonderful Torque 3D engine!
+
+And my personal shout out to the community over at GG, you guys are the best 
+and I would never have been able to get everything working correctly without 
+the help of the community, this one is for you.
